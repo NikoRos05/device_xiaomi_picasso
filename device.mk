@@ -141,3 +141,8 @@ PRODUCT_PACKAGES += \
 #    telephony-ext
 
 
+# Binder
+PRODUCT_PACKAGES += \
+    libhwbinder \
+    libhwbinder.vendor \
+    libhidltransport
