@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libhidltransport
 
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
