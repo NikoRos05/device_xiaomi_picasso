@@ -17,4 +17,17 @@ PRODUCT_PRODUCT_PROPERTIES += \
     vendor.camera.aux.packagelist=org.lineageos.snap,net.sourceforge.opencamera,org.codeaurora.snapcam
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.lcd_density=440
+    persist.vendor.audio.fluence.voicerec=true \
+    persist.vendor.audio.fluence.audiorec=true
+
+# Telephony
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.telephony.default_network=22,22 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
+
+# Priv-app permission
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.control_privapp_permissions=log
