@@ -12,13 +12,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.adb.secure=0
 endif
 
+
+
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
     vendor.camera.aux.packagelist=org.lineageos.snap,net.sourceforge.opencamera,org.codeaurora.snapcam
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.vendor.audio.fluence.voicerec=true \
-    persist.vendor.audio.fluence.audiorec=true
 
 # Telephony
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -46,7 +44,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 #PRODUCT_PRODUCT_PROPERTIES += \
 #    ro.bluetooth.library_name=libbluetooth.so
 
-# Enable blurs
-#PRODUCT_PRODUCT_PROPERTIES += \
-#    ro.surface_flinger.supports_background_blur=1 \
-#    ro.sf.blurs_are_expensive=1
+ Enable blurs
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1 \
+    ro.sf.blurs_are_expensive=1
