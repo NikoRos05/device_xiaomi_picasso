@@ -31,6 +31,12 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
+AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
+AUDIO_FEATURE_ENABLED_HDMI_SPK := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
@@ -55,10 +61,10 @@ BOARD_KERNEL_SECOND_OFFSET := 0xf00000
 BOARD_KERNEL_TAGS_OFFSET := 0x100
 BOARD_KERNEL_OFFSET := 0x00008000
 TARGET_KERNEL_ARCH := arm64
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb-12.05-stable
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/boot_12.06.img-dtb
 #BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img-12.05-stable
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel-12.05-stable
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo_12.06.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/boot_12.06.img-zImage
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7250
   TARGET_KERNEL_CONFIG := vendor/picasso_user_defconfig
@@ -124,20 +130,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
     device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/generic/public/attribute \
-    device/qcom/sepolicy/qva/public \
-    device/qcom/sepolicy/qva/public/attribute
-
-PRODUCT_PUBLIC_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/generic/product/public \
-    device/qcom/sepolicy/qva/product/public
-
-PRODUCT_PRIVATE_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/generic/product/private \
-    device/qcom/sepolicy/qva/product/private
-
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/realeasetools.py
+    device/qcom/sepolicy/qva/public
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
@@ -159,3 +152,11 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
+BUILD_BROKEN_DUP_RULES := true
+
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := lito
+
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH) \
+    hardware/google/pixel
