@@ -61,10 +61,10 @@ BOARD_KERNEL_SECOND_OFFSET := 0xf00000
 BOARD_KERNEL_TAGS_OFFSET := 0x100
 BOARD_KERNEL_OFFSET := 0x00008000
 TARGET_KERNEL_ARCH := arm64
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/boot_12.06.img-dtb
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/boot12.0.7.img-dtb
 #BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo_12.06.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/boot_12.06.img-zImage
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo12.0.7.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/boot12.0.7.img-zImage
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7250
   TARGET_KERNEL_CONFIG := vendor/picasso_user_defconfig
@@ -125,12 +125,12 @@ TARGET_USES_MKE2FS := true
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(DEVICE_PATH)/sepolicy/private
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
+    device/qcom/sepolicy_q/generic/private \
+    device/qcom/sepolicy_q/qva/private
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public
+    device/qcom/sepolicy_q/generic/public \
+    device/qcom/sepolicy_q/qva/public
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
