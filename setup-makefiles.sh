@@ -16,9 +16,9 @@ INITIAL_COPYRIGHT_YEAR=2020
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-SYBERIA_ROOT="${MY_DIR}/../../.."
+AWAKEN_ROOT="${MY_DIR}/../../.."
 
-HELPER="${SYBERIA_ROOT}/vendor/syberia/build/tools/extract_utils.sh"
+HELPER="${AWAKEN_ROOT}/vendor/awaken/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -26,7 +26,7 @@ fi
 source "${HELPER}"
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${SYBERIA_ROOT}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${AWAKEN_ROOT}"
 
 # Copyright headers and guards
 write_headers

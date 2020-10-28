@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/syberia_picasso.mk
+    $(LOCAL_DIR)/awaken_picasso.mk
