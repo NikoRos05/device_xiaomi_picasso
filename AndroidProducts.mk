@@ -5,4 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/awaken_picasso.mk
+    $(LOCAL_DIR)/pixys_picasso.mk
+
+COMMON_LUNCH_CHOICES := \
+    pixys_picasso-user \
+    pixys_picasso-userdebug \
+    pixys_picasso-eng
